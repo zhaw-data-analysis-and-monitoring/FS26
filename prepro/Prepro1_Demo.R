@@ -4,12 +4,9 @@ x
 
 class(x)
 
-y = 7.3
+
+y = 7
 y
-
-d <- 8L
-
-class(d)
 
 sunny <- FALSE
 dry <- TRUE
@@ -27,19 +24,6 @@ class(fname)
 
 paste(fname, lname)
 paste(fname, lname, sep = ",")
-
-
-# with c(), we can combine multiple character strings
-# we will learn about this later
-bundesrat <- c("die Mitte","FDP", "SVP", "FDP", "SVP", "SP", "SP")
-
-class(bundesrat)
-
-bundesrat2 <- as.factor(bundesrat)
-
-bundesrat2
-
-factor(bundesrat, levels = c("SP", "die Mitte", "FDP", "SVP"), ordered = TRUE)
 
 now_txt <- as.POSIXct("2024-02-01 13:45:00")
 
@@ -60,6 +44,7 @@ today_posixct
 as.numeric(today_posixct)
 
 
+try({
 date_txt <- "01.10.2017 15:15"
 
 # converts character to POSIXct:
@@ -68,6 +53,7 @@ as.POSIXct(date_txt)
 date_posix <- as.POSIXct(date_txt, format = "%d.%m.%Y %H:%M")
 
 date_posix
+})
 
 strftime(date_posix, format = "%m")           # <1>
 strftime(date_posix, format = "%b")           # <2>

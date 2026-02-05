@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Preparation Course – Data Analysis and Monitoring</title>
+<title>Appendix – Data Analysis and Monitoring</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./PrePro.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./References.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -251,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./preparation.html"><span class="chapter-title">Preparation Course</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Appendix.html"><span class="chapter-title">Appendix</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -296,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preparation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preparation Course</span></a>
+  <a href="./preparation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preparation Course</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -464,7 +498,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./Appendix.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Appendix</span></a>
   </div>
 </li>
     </ul>
@@ -477,12 +511,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#install-r" id="toc-install-r" class="nav-link active" data-scroll-target="#install-r">Install R</a></li>
-  <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">Install RStudio</a></li>
-  <li><a href="#configure-rstudio" id="toc-configure-rstudio" class="nav-link" data-scroll-target="#configure-rstudio">Configure RStudio</a>
-  <ul class="collapse">
-  <li><a href="#create-an-rstudio-project-for-the-first-week" id="toc-create-an-rstudio-project-for-the-first-week" class="nav-link" data-scroll-target="#create-an-rstudio-project-for-the-first-week">Create an RStudio <em>project</em> for the first week</a></li>
-  </ul></li>
+  <li><a href="#folder-structure" id="toc-folder-structure" class="nav-link active" data-scroll-target="#folder-structure">Folder structure for this course</a></li>
+  <li><a href="#input-libraries-packages" id="toc-input-libraries-packages" class="nav-link" data-scroll-target="#input-libraries-packages">Input: Libraries / packages</a></li>
   </ul>
 </nav>
     </div>
@@ -492,7 +522,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="w0-preparation" class="quarto-section-identifier"><span class="chapter-title">Preparation Course</span></span></h1>
+<h1 class="title"><span class="chapter-title">Appendix</span></h1>
 </div>
 
 
@@ -509,46 +539,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this course we will be using R and RStudio. We ask you to install and/or update these programs <em>before</em> the start of the course, so that we do not loose time once the course starts. In this chapter, we cover the course requirements and some tips on how you should change your RStudio settings.</p>
-<section id="install-r" class="level2">
-<h2 class="anchored" data-anchor-id="install-r">Install R</h2>
-<p>If you haven’t installed R yet, do so now by getting the newest version from <a href="https://cran.r-project.org/">CRAN</a>.</p>
-</section>
-<section id="install-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="install-rstudio">Install RStudio</h2>
-<p><a href="https://posit.co/download/rstudio-desktop/">RStudio</a> is the IDE (integrated development environment) we use in our course to interact with R. Download and install it on your computer.</p>
-</section>
-<section id="configure-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="configure-rstudio">Configure RStudio</h2>
-<p>Now we will set some RStudio Global options. But first, <strong>close all instances of RStudio and restart it (!!!)</strong>. Then go to Tools &gt; Global options.</p>
+<section id="folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="folder-structure">Folder structure for this course</h2>
+<p>You probably have created a folder for this course somewhere on your computer. In our example, we assume this folder is located here: <code>C:/Users/yourname/semester2/Module_DAMO</code> (mentally replace this with your actual path). This course will take place over several weeks, and in each week you will receive or produce various files. We recommend creating a separate folder for each week, and one folder for the case studies, like so:</p>
+<pre><code>Course Folder (C:\\Users\\yourname\\semester2\\Module_DAMO)
+ ¦--week_1                                                
+ ¦--week_2                                                
+ ¦--week_3                                                
+ |--...                                                
+ °--case_studies </code></pre>
+<p>For the R-exercises we recommend that you create a new RStudio Project each week in subdirectory of the appropriate week. For example, for the first week your folder structure could look like this:</p>
+<pre><code>Folder Week 1 (C:\\Users\\yourname\\semester2\\Module_DAMO\\week_1)
+ ¦--slides.pdf                                                  
+ ¦--my_notes.docx                                               
+ ¦--seminar_screenshot.jpg                                      
+ °---damo-week1-rexercise                                             
+     ¦--damo-week1-rexercise.Rproj                                   
+     ¦--test.csv                                      
+     °--my_solution.qmd   </code></pre>
+<p>Note:</p>
 <ul>
-<li><strong>R General</strong>
-<ul>
-<li>Deactivate the option “Restore .RData into workspace at startup”</li>
-<li>Set “Save workspace to .RData on exit” to “Never”</li>
-</ul></li>
-<li><strong>Code</strong>
-<ul>
-<li>Activate the option “Use native pipe operator, |&gt; (requires R 4.1+)”</li>
-</ul></li>
-<li><strong>R Markdown</strong>
-<ul>
-<li>Deactivate the option “Show output inline for all R Markdown documents”</li>
-</ul></li>
+<li>the RStudio Project is located in a subfolder of <code>C:/Users/yourname/semester1/Module_DAMO/week_1</code> and named <code>damo-week1-rexercise</code>.</li>
+<li><code>damo-week1-rexercise</code> is the project’s <em>directory name</em> and the <em>project name</em></li>
+<li>we realize that <code>damo</code> and the week number is redundant, there is a reason<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for this</li>
+<li>this means each week is a fresh start (which has pros and cons)</li>
 </ul>
-<p>Click on “Ok” to apply the change and close the options menu.</p>
-<section id="create-an-rstudio-project-for-the-first-week" class="level3">
-<h3 class="anchored" data-anchor-id="create-an-rstudio-project-for-the-first-week">Create an RStudio <em>project</em> for the first week</h3>
-<p>Create a new <em>RStudio Project</em> (File &gt; New Project &gt; New Directory &gt; New Project).</p>
-<ol type="1">
-<li>Click on “Browse” and switch to <em>your equivalent</em> of the folder <code>C:/Users/yourname/semester1/Module_DAMO/week_1</code> (the project we are about to initiate will be be created in a subdirectory of this folder). Click on “open” to confirm the selection</li>
-<li>In the field “Directory name”, type <code>damo-week1-rexercise</code>. This will be the name of your RStudio project and it’s parent directory.</li>
-<li>Click on “Create Project”</li>
-</ol>
-<p>You are all set!</p>
+</section>
+<section id="input-libraries-packages" class="level2">
+<h2 class="anchored" data-anchor-id="input-libraries-packages">Input: Libraries / packages</h2>
+<p>Libraries (aka packages) are are “extensions” to the basic R functionality. R packages have become indispensable to using R. The vast majority of packages are hosted on <a href="https://cran.r-project.org/">CRAN</a> and can be easily installed using <code>install.packages("packagename")</code>. This installation is done <em>once</em>. To use the library, you must load it into the current R session using <code>library(packagename)</code>.</p>
+<p>E.g. To import data, we recommend using the <code>readr</code> package<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Install the package using the command <code>install.package("readr")</code>. To use the package, load it into the current R session using <code>library("readr")</code>.</p>
+<p>If the package installation ends with the following message, this means that the installation failed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>installation of package ‘blabla’ had non-zero exit status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If the package installation ends with the following message, this <em>usually</em> means that you misspelled the package name</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Warning message:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>package ‘blabla’ is not available for this version of R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>You will see the project names of all your RStudio Projects listed in RStudio. Having the week number in the project name keeps you from getting confused on which project you are working on.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Advantages of <code>read_delim</code> over <code>read.csv</code>: <a href="https://stackoverflow.com/a/60374974/4139249" class="uri">https://stackoverflow.com/a/60374974/4139249</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1018,14 +1052,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./References.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">References</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./PrePro.html" class="pagination-link" aria-label="Pre-Processing">
-        <span class="nav-page-text">Pre-Processing</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
