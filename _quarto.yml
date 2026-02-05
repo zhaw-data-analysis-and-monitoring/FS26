@@ -37,7 +37,7 @@ execute:
     
 book:
   title: "Data Analysis and Monitoring"
-  subtitle: "FS25"
+  subtitle: "FS26"
   sidebar: 
     logo: images/zhaw_sw_pos.png
     collapse-level: 1
@@ -89,6 +89,6 @@ book:
       - --
       - spatan/Spatan2_Uebung_A.qmd
       - spatan/Spatan2_Uebung_B.qmd
-    - "References.qmd"
-
+    - References.qmd
+    - Appendix.qmd
 

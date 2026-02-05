@@ -1,31 +1,24 @@
 # these temperature are in Kelvin:
-temperature <- c("310","322","348")
+temperature <- c("111", "150", "123")
+
 
 temperature
 
 
-subtract <- function(x,y){x-y} # helperfunction to subtract y from x
+library("magrittr")
 
-output <- mean(subtract(as.integer(temperature), 273.15))
-#                                 \___1_____/
-#                       \_____________2_______/
-#              \______________________3________________/
-#         \___________________________4_________________/
+out <- as.numeric(temperature)      # 1. Convert to numeric
+out <- subtract(out, 32)            # 2. Subtract 32
+out <- multiply_by(out, 5/9)        # 3. Multiply with 5/9
+out <- mean(out)                    # 4. Calculate the mean
 
-# 1. Take temperature
-# 2. Convert "character" → "integer"
-# 4. Subtract 273.15
-# 5. Calculate the mean
+out <- mean(multiply_by(subtract(as.numeric(temperature), 32), 5/9))
 
-tmp <- as.integer(temperature)   # 2
-tmp <- subtract(tmp, 273.15)     # 3
-output <- mean(tmp)              # 4
-output
-
-temperature |>        # 1
-  as.integer() |>     # 2
-  subtract(273.15) |> # 3
-  mean()              # 4
+temperature |>                  
+  as.numeric() |>               # 1. Convert to numeric
+  subtract(32) |>               # 2. Subtract 32
+  multiply_by(5/9) |>           # 3. Multiply with 5/9
+  mean()                        # 4. Calculate the mean
 
 students <- data.frame(
   Matriculation_No = c(100002, 100003, 200003),

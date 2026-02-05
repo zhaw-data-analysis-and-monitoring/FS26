@@ -11,15 +11,14 @@ This demo's source code can also [be downloaded as an R Script](Prepro1_Demo.R) 
 
 ## Data types
 
-### Doubles
+### Numeric
 
-There are two different `numeric` data types in R:
+Numbers are in the class `numeric` data type in R. Strictly speaking, there are two different kind of numeric values:
 
 - `double`: floating-point number (e.g. 10.3, 7.3)
 - `integer` (e.g. 10, 7)
 
-
-A double / floating point number is assigned to a variable as follows:
+In the beginning, its not too important to differentiate between these two types.
 
 ```{r}
 x <- 10.3
@@ -27,6 +26,7 @@ x <- 10.3
 x
 
 class(x)
+
 ```
 
 :::{.callout-note}
@@ -34,23 +34,12 @@ class(x)
 Either `<-` or `=` can be used. However, the latter is also easily confused with `==`.
 
 ```{r}
-y = 7.3
+y = 7
 y
 ```
 
 
 :::
-
-### Integer
-
-A number is only stored as an `integer` if it is explicitly defined as one (using `as.integer()` or `L`).
-
-```{r}
-d <- 8L
-
-class(d)
-```
-
 
 
 ### Boolean
@@ -85,34 +74,6 @@ Connecting / concatenating character strings
 paste(fname, lname)
 paste(fname, lname, sep = ",")
 ```
-
-
-<!--
-
-### Factors
-
-Factors in R denote a collection of repeating character strings, e.g. the policical parties represented in the federal council ("Bundesrat").
-
-```{r}
-
-# with c(), we can combine multiple character strings
-# we will learn about this later
-bundesrat <- c("die Mitte","FDP", "SVP", "FDP", "SVP", "SP", "SP")
-
-class(bundesrat)
-
-bundesrat2 <- as.factor(bundesrat)
-
-bundesrat2
-```
-
-By default, the factor levels are ordered alphabetically. Sometimes we may want to order the factors, usually for visualisation purposes. To do so, we specify the `levels` in the order we want and set `ordered = TRUE`.
-
-```{r}
-factor(bundesrat, levels = c("SP", "die Mitte", "FDP", "SVP"), ordered = TRUE)
-```
-
--->
 
 ### Date / time
 

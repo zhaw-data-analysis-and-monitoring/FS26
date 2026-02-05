@@ -22,13 +22,15 @@ The code for this demo can also [be downloaded as an R Script](Prepro2_Demo.R) (
 
 ## Piping
 
-We want to extract the temperature data from a character string (`temperature`), and then convert the Kelvin value into Celsius according to the following formula, before finally calculating the mean of all the values:
+We want to extract the temperature data from a character string (`temperature`), and then convert the Farenheit value into Celsius according to the following formula, before finally calculating the mean of all the values:
 
-$$°C = K - 273.15$$
+$$°C = (F - 32) \times \frac{5}{9}$$
+
 
 ```{r}
 # these temperature are in Kelvin:
-temperature <- c("310","322","348")
+temperature <- c("111", "150", "123")
+
 
 temperature
 ```
@@ -38,36 +40,28 @@ Translated into R-code, this results in the following operation:
 
 ```{r}
 
-subtract <- function(x,y){x-y} # helperfunction to subtract y from x
+library("magrittr")
 
-output <- mean(subtract(as.integer(temperature), 273.15))
-#                                 \___1_____/
-#                       \_____________2_______/
-#              \______________________3________________/
-#         \___________________________4_________________/
-
-# 1. Take temperature
-# 2. Convert "character" → "integer"
-# 4. Subtract 273.15
-# 5. Calculate the mean
+out <- as.numeric(temperature)      # 1. Convert to numeric
+out <- subtract(out, 32)            # 2. Subtract 32
+out <- multiply_by(out, 5/9)        # 3. Multiply with 5/9
+out <- mean(out)                    # 4. Calculate the mean
 ```
 
-The whole operation is easier to read if it is written down sequentially:
+If you want to avoid caching values, this results in a complex, illegible operation.
 
 ```{r}
-tmp <- as.integer(temperature)   # 2
-tmp <- subtract(tmp, 273.15)     # 3
-output <- mean(tmp)              # 4
-output
+out <- mean(multiply_by(subtract(as.numeric(temperature), 32), 5/9))
 ```
 
-The fact that the intermediate results must always be saved and retrieved again in the subsequent operation makes this somewhat cumbersome. This is where "piping" comes into play: *It makes the output of one function the first parameter of the subsequent function.*
+Piping can be used to keep the code readable and avoid storing intermediate results: *With “piping,” the output of one function becomes the first parameter of the following function.*
 
 ```{r}
-temperature |>        # 1
-  as.integer() |>     # 2
-  subtract(273.15) |> # 3
-  mean()              # 4
+temperature |>                  
+  as.numeric() |>               # 1. Convert to numeric
+  subtract(32) |>               # 2. Subtract 32
+  multiply_by(5/9) |>           # 3. Multiply with 5/9
+  mean()                        # 4. Calculate the mean
 ```
 
 :::{.callout-important}
@@ -75,7 +69,6 @@ temperature |>        # 1
 - In addition to the *base R* pipe operator, there is also a very similar[^pipe] pipe operator, `%>%`, in the `magrittr` package.
 - The <kbd>Ctrl</kbd> +<kbd>Shift</kbd>+<kbd>M</kbd> keyboard shortcut in RStudio inserts a pipe operator.
 - By checking the Use native pipe operator setting in RStudio Settings `Tools` → `Global Options` → `Code`, you can control which `pipe operator`, `|>` or `%>%`, is inserted with the above key combination.
-- We recommend using the base-R pipe operator `|>`
 :::
 
 [^pipe]: see <https://stackoverflow.com/q/67633022/4139249>

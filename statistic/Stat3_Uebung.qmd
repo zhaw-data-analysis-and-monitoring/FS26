@@ -17,8 +17,10 @@ knitr:
 
 install.packages("factoextra")
 install.packages("mclust")
-library(factoextra)
+```
 
+```{r}
+library(factoextra)
 ```
 
 Consider the $iris$ dataset. Suppose we are given the petal and sepal length and widths, but not told which species each iris belongs to.

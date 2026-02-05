@@ -28,8 +28,6 @@ First, let’s import the dataset *tagi_data_kanton.csv*.
 #| echo: true
 #| code-fold: false
 
-library("dplyr")
-library("ggplot2")
 library("readr")
 
 canton <- read_delim("datasets/infovis/tagi_data_kantone.csv", ",")
@@ -52,6 +50,8 @@ Here’s are some tips to get you started:
 #| output: true
 
 # Solution to Task 1
+
+library("ggplot2")
 
 plot1 <- ggplot(canton, aes(auslanderanteil, ja_anteil)) +
   geom_point() +

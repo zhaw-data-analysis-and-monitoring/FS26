@@ -27,9 +27,7 @@ To do this, load the required libraries and records into your session. Explore t
 #| echo: true
 #| code-fold: false
 
-library("dplyr")
 library("sf")
-library("ggplot2")
 
 meadows <- read_sf("datasets/rauman/gruental.gpkg", "wiesen")
 trees <- read_sf("datasets/rauman/gruental.gpkg", "baeume")
@@ -41,6 +39,9 @@ In order to simplify the exercise a little, we will only work with 10 trees at f
 #| echo: true
 #| code-fold: false
 
+
+library("dplyr")
+
 set.seed(100)
 trees_sample <- sample_n(trees, 10)
 ```
@@ -49,6 +50,7 @@ trees_sample <- sample_n(trees, 10)
 #| echo: true
 #| code-fold: false
 #| output: true
+library("ggplot2")
 
 ggplot() +
   geom_sf(data = meadows) +

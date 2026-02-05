@@ -4,11 +4,12 @@ lesson: PrePro1
 topic: Data Types
 index: 2
 execute:
-  echo: true # set to true to show sample solution
-  output: true # set to true to show sample solution
+  echo: false # set to true to show sample solution
+  output: false # set to true to show sample solution
 code-fold: true
 code-summary: "Sample Solution"
 ---
+
 
 # PrePro 1: Exercise
 
@@ -78,17 +79,6 @@ df$Number <- as.integer(df$Number)
 df$Sex <- factor(df$Sex, levels = c("m","f"))
 ```
 
-
-
-## Input: Libraries / packages
-
-Libraries (aka packages) are are "extensions" to the basic R functionality. 
-R packages have become indispensable to using R. The vast majority of packages are hosted on [CRAN](https://cran.r-project.org/) and can be easily installed using `install.packages("packagename")`. This installation is done *once*. To use the library, you must load it into the current R session using `library(packagename)`.
-
-E.g. To import data, we recommend using the `readr` package[^readr]. Install the package using the command `install.package("readr")`. To use the package, load it into the current R session using `library("readr")`. 
-
-
-[^readr]: Advantages of `read_delim` over `read.csv`: <https://stackoverflow.com/a/60374974/4139249>
 
 ## Task 3
 

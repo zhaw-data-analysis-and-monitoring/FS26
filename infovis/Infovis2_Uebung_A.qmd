@@ -21,16 +21,14 @@ For today’s exercise, you will need the dataset *temperature_2005.csv* ({{<var
 #| echo: true
 #| code-fold: false
 
-library("readr")
-library("dplyr")
-library("lubridate")
-library("tidyr")
-library("ggplot2")
+
 ```
 
 ```{r}
 #| echo: true
 #| code-fold: false
+
+library("readr")
 
 temperature <- read_delim("datasets/infovis/temperature_2005.csv", ",")
 ```
@@ -43,6 +41,9 @@ Transform the *wide table* into a *long table* using the following code.
 #| echo: true
 #| code-fold: false
 
+
+
+library("tidyr")
 temperature_long <- pivot_longer(
   data = temperature, 
   cols = -time, 
@@ -61,6 +62,8 @@ Next, import the dataset *temperature_2005_metadata.csv* and join the two datase
 ```{r}
 metadata <- read_delim("datasets/infovis/temperature_2005_metadata.csv", ",")
 
+library("dplyr")
+
 temperature_long <- left_join(temperature_long, metadata, by = c(station = "stn"))
 ```
 
@@ -74,6 +77,7 @@ Tipp: Reduce the size of the points to avoid excessive over-plotting of the poin
 #| output: true
 
 # Sample Solution
+library("ggplot2")
 ggplot(temperature_long, aes(time, temperature, colour = Meereshoehe)) +
   geom_point(size = 0.5) +
   labs(x = "", y = "Temperature in ° Celsius") +
@@ -150,6 +154,8 @@ Now, let's move away from the scatter plot and create a box plot with the temper
 #| output: true
 
 # Sample solution
+library("lubridate")
+
 temperature_long <- mutate(temperature_long, month = month(time, label = T, abbr = F))
 
 ggplot(temperature_long, aes(month, temperature, fill = Meereshoehe)) +

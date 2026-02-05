@@ -1,8 +1,13 @@
+---
+freeze: false
+---
+
 # Welcome {.unnumbered .unlisted}
 
 ```{r}
 #| echo: false
 #| output: false
+
 now <- Sys.time()
 attr(now, "tzone") <- "Europe/Zurich"
 options(knitr.duplicate.label = "allow")

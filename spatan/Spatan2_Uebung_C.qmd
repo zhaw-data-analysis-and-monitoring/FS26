@@ -28,17 +28,13 @@ First of all, we want to carry out density estimates for the `air_quality` and `
 #| echo: true
 #| code-fold: false
 
-library("sf")
-library("dplyr")
-library("ggplot2")
 
-library("spatstat.geom")
-library("spatstat.explore")
 ```
 
 ```{r}
 #| results: asis
 
+library("sf")
 air_quality <- read_sf("datasets/rauman/luftqualitaet.gpkg")
 red_kites <- read_sf("datasets/rauman/rotmilan.gpkg")
 switzerland <- read_sf("datasets/rauman/schweiz.gpkg")
@@ -50,6 +46,8 @@ The first question typically asked in such movement studies is: *where can this 
 
 ```{r}
 #| output: true
+
+library("ggplot2")
 
 ggplot(switzerland) +
   geom_sf() +
@@ -68,6 +66,10 @@ We encourage those of you who can study our function in detail to not use it, an
 ```{r}
 #| echo: true
 #| code-fold: false
+
+
+
+
 
 my_kde <- function(points, cellsize, bandwith, extent = NULL){
   library("spatstat.geom")    # to convert to ppp
@@ -133,6 +135,8 @@ In addition, a logarithmic transformation of the values helps to make the colour
 #| output: true
 
 q95 <- quantile(red_kites_kde$value, probs = 0.95)
+
+library("dplyr")
 
 red_kites_kde <- red_kites_kde |>
   mutate(

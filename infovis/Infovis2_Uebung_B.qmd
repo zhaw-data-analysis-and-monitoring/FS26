@@ -23,9 +23,7 @@ We’ll continue to use `ggplot2`, but with a few tricks.
 #| echo: true
 #| code-fold: false
 
-library("dplyr")
-library("tidyr")
-library("ggplot2")
+
 ```
 
 ## Task 1: Parallel Coordinate Plots
@@ -35,9 +33,15 @@ Create a [parallel coordinate plot](https://en.wikipedia.org/wiki/Parallel_coord
 Also, the values need to be normalised to a common scale. For this, you can use the function `scales::rescale`.
 
 ```{r}
+
+library("tidyr")
+library("tibble")
 mtcars2 <- mtcars |>
-  tibble::rownames_to_column("car") |>
+  rownames_to_column("car") |>
   pivot_longer(-car)
+
+library("dplyr")
+
 
 mtcars2 <- mtcars2 |>
   group_by(name) |>
@@ -59,6 +63,9 @@ Here’s what the finished plot looks like:
 mtcars2 <- mtcars2 |>
   group_by(car) |>
   mutate(gear = value[name == "gear"])
+
+library("ggplot2")
+
 
 ggplot(mtcars2, aes(name, value_scaled, group = car, colour = factor(gear))) +
   geom_point() +
