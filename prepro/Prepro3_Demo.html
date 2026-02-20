@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.11">
+<meta name="generator" content="quarto-1.9.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>Prepro 3: Demo – Data Analysis and Monitoring</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -60,7 +63,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -95,14 +97,14 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c68954332a9a728fbec0dcc4220298e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-cf7bdb17bd34a0e1207c13956142456b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-c68954332a9a728fbec0dcc4220298e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7d6dd9a74db5b421470ae66caec7b283.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-de403bef22213c63ec6f53c60109b325.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7d6dd9a74db5b421470ae66caec7b283.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -571,7 +573,7 @@ div.csl-indent {
 
 
 <p>In this demo, we will introduce other tools from the Tidyverse and explain them using examples. The tidyverse tools make dealing with data much easier and have now become a must have when dealing with data in R.</p>
-<p>We cannot show you all the possibilities of tidyverse. Therefore, we will focus on the most important components and also introduce additional functionalities that we often use but may not yet be known to you. If you want to delve deeper into the topic, you should read <span class="citation" data-cites="wickham2023">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="../References.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>, which is available online: <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a></p>
+<p>We cannot show you all the possibilities of tidyverse. Therefore, we will focus on the most important components and also introduce additional functionalities that we often use but may not yet be known to you. If you want to delve deeper into the topic, you should read <span class="citation" data-cites="wickham2023">Wickham et al. (<a href="../References.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>, which is available online: <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a></p>
 <section id="load-data" class="level2">
 <h2 class="anchored" data-anchor-id="load-data">Load data</h2>
 <p>Lets load the weather data (source MeteoSchweiz) from the last exercise.</p>
@@ -593,7 +595,7 @@ div.csl-indent {
 <li>Convert it to character</li>
 <li>Convert it to POSIXct using a specified <em>format</em> and <em>timezone</em></li>
 </ol>
-<p>The translation from R → English looks different because we read the operation in a <em>concatenated form</em> in English (operation 1 → 2 → 3) while the computer reads it as a <em>nested</em> operation 3(2(1)). To make R closer to English, you can use the <code>|&gt;</code> operator <span class="citation" data-cites="wickham2023">(see <a href="../References.html#ref-wickham2023" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023, chap. 4.3</a>)</span>.</p>
+<p>The translation from R → English looks different because we read the operation in a <em>concatenated form</em> in English (operation 1 → 2 → 3) while the computer reads it as a <em>nested</em> operation 3(2(1)). To make R closer to English, you can use the <code>|&gt;</code> operator <span class="citation" data-cites="wickham2023">(see <a href="../References.html#ref-wickham2023" role="doc-biblioref">Wickham et al. 2023, 4.3</a>)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>weather<span class="sc">$</span>time2 <span class="ot">&lt;-</span> weather<span class="sc">$</span>time <span class="sc">|&gt;</span> </span>
@@ -672,7 +674,7 @@ div.csl-indent {
 <li>Form groups per year (<code>group_by(weather, year)</code>)</li>
 <li>Calculate the mean temperature (<code>mean(tre200h0)</code>)</li>
 </ol>
-<p>The translation from R → English looks different because we read the operation in a <em>concatenated form</em> in English (operation 1 → 2 → 3) while the computer reads it as a <em>nested</em> operation 3(2(1)). To make R closer to English, you can use the <code>|&gt;</code> operator <span class="citation" data-cites="wickham2023">(see <a href="../References.html#ref-wickham2023" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023, chap. 4.3</a>)</span>.</p>
+<p>The translation from R → English looks different because we read the operation in a <em>concatenated form</em> in English (operation 1 → 2 → 3) while the computer reads it as a <em>nested</em> operation 3(2(1)). To make R closer to English, you can use the <code>|&gt;</code> operator <span class="citation" data-cites="wickham2023">(see <a href="../References.html#ref-wickham2023" role="doc-biblioref">Wickham et al. 2023, 4.3</a>)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 take the dataset "weather"</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 form groups per month</span></span>
@@ -689,7 +691,7 @@ div.csl-indent {
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(month) <span class="sc">|&gt;</span>                       <span class="co"># 2</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">temp_average =</span> <span class="fu">mean</span>(tre200h0)) <span class="co"># 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>This concatenation by means of <code>|&gt;</code> (called pipe) makes the code a lot easier to write and read, and we will use it in the following exercises. Pipe is provided as part of the <code>magrittr</code> package and installed with <code>dplyr</code>. There are several online tutorials about <code>dplyr</code> <span class="citation" data-cites="wickham2023">(see <a href="../References.html#ref-wickham2023" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund 2023</a>, Part “Transform” or <a href="https://youtu.be/jWjqLW-u3hc">this youtube tutorial</a>)</span></p>
+<p>This concatenation by means of <code>|&gt;</code> (called pipe) makes the code a lot easier to write and read, and we will use it in the following exercises. Pipe is provided as part of the <code>magrittr</code> package and installed with <code>dplyr</code>. There are several online tutorials about <code>dplyr</code> <span class="citation" data-cites="wickham2023">(see <a href="../References.html#ref-wickham2023" role="doc-biblioref">Wickham et al. 2023</a>, Part “Transform” or <a href="https://youtu.be/jWjqLW-u3hc">this youtube tutorial</a>)</span></p>
 <p>Therefore, we will not explain all of these tools in full detail. Instead we will just focus on the important differences for two main functions in <code>dpylr</code>: <code>mutate()</code> and <code>summarise()</code>.</p>
 <ul>
 <li><code>summarise()</code> summarises a data set. The number of observations (rows) is reduced to the number of groups (e.g., one summarised observation (row) per year). In addition, the number of variables (columns) is reduced to those specified in the “summarise” function (e.g., <code>temp_mean</code>).</li>
@@ -724,7 +726,7 @@ div.csl-indent {
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-wickham2023" class="csl-entry" role="listitem">
 Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 2nd Edition</em>. O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
