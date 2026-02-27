@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Analysis and Monitoring",
     "section": "",
-    "text": "Welcome\nThe “Data Analysis and Monitoring” module provides an in-depth overview of the methodological skills required for hands-on research and development in any applied data-related or data-heavy project the Master’s level. Students will refine their methodological expertise by examining the different typical phases of data analysis and modelling, starting from data capture and preprocessing the data, through exploratory analysis and predictive modelling, to visualization and communication in the end. They will also acquire the methodological foundations that will underpin the subsequent modules in the MSc CEM programme. The module provides both general methodological skills that cut across disciplines (e.g., scientific theory, computer-aided data processing, and statistics) and specialised knowledge in the context of circular economy.\nThe materials required for the R exercises are available here, with demo files, exercises and solutions.\nThis website was last updated on 2026-02-20 15:45:25.643667.",
+    "text": "Welcome\nThe “Data Analysis and Monitoring” module provides an in-depth overview of the methodological skills required for hands-on research and development in any applied data-related or data-heavy project the Master’s level. Students will refine their methodological expertise by examining the different typical phases of data analysis and modelling, starting from data capture and preprocessing the data, through exploratory analysis and predictive modelling, to visualization and communication in the end. They will also acquire the methodological foundations that will underpin the subsequent modules in the MSc CEM programme. The module provides both general methodological skills that cut across disciplines (e.g., scientific theory, computer-aided data processing, and statistics) and specialised knowledge in the context of circular economy.\nThe materials required for the R exercises are available here, with demo files, exercises and solutions.\nThis website was last updated on 2026-02-27 10:16:27.404052.",
     "crumbs": [
       "Welcome"
     ]
@@ -230,7 +230,7 @@
     "href": "prepro/Prepro2_Uebung_A.html",
     "title": "Prepro 2: Exercise A",
     "section": "",
-    "text": "Task 1\nRead the weather data from last week weather.csv (source MeteoSchweiz) into R. Make sure that the columns are formatted correctly (stn as a factor, time as POSIXct, tre200h0 as a numeric).",
+    "text": "Task 1\nRead the weather data from last week weather.csv (source MeteoSchweiz) into R. Make sure that the columns are formatted correctly (stn as a factor, time as POSIXct, tre200h0 as a numeric).\nSample Solution\n\nlibrary(\"readr\")\n\nweather &lt;- read_delim(\"datasets/prepro/weather.csv\", \",\")\nweather$stn &lt;- as.factor(weather$stn)\nweather$time &lt;- as.POSIXct(as.character(weather$time), format = \"%Y%m%d%H\", tz = \"UTC\")",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prepro 2: Exercise A</span>"
@@ -241,7 +241,7 @@
     "href": "prepro/Prepro2_Uebung_A.html#task-2",
     "title": "Prepro 2: Exercise A",
     "section": "Task 2",
-    "text": "Task 2\nRead in the metadata.csv dataset as a dataframe.",
+    "text": "Task 2\nRead in the metadata.csv dataset as a dataframe.\n\n\nSample Solution\nmetadata &lt;- read_delim(\"datasets/prepro/metadata.csv\")",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prepro 2: Exercise A</span>"
@@ -252,7 +252,7 @@
     "href": "prepro/Prepro2_Uebung_A.html#task-3",
     "title": "Prepro 2: Exercise A",
     "section": "Task 3",
-    "text": "Task 3\nNow we want to enrich the weather data set with information from metadata. However, we are only interested in the station abbreviation, the name, the x/y coordinates and the sea level. Select these columns.",
+    "text": "Task 3\nNow we want to enrich the weather data set with information from metadata. However, we are only interested in the station abbreviation, the name, the x/y coordinates and the sea level. Select these columns.\n\n\nSample Solution\nmetadata &lt;- metadata[, c(\"stn\", \"Name\", \"x\", \"y\", \"Meereshoehe\")]",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prepro 2: Exercise A</span>"
@@ -263,7 +263,7 @@
     "href": "prepro/Prepro2_Uebung_A.html#task-4",
     "title": "Prepro 2: Exercise A",
     "section": "Task 4",
-    "text": "Task 4\nNow the metadata can be connected to the weather data set. Which join should we use to do this? And, which attribute can we join?\nUse the join options in dplyr (help via? dplyr::join) to connect the weather data set and the metadata.",
+    "text": "Task 4\nNow the metadata can be connected to the weather data set. Which join should we use to do this? And, which attribute can we join?\nUse the join options in dplyr (help via? dplyr::join) to connect the weather data set and the metadata.\n\n\nSample Solution\n\nlibrary(\"dplyr\")\n\n\nweather &lt;- left_join(weather, metadata, by = \"stn\")\n\n# Join type: Left-Join on 'weather', as we are only interested in the stations in the 'weather' dataset.\n# Attribute: \"stn\"",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prepro 2: Exercise A</span>"
@@ -274,7 +274,7 @@
     "href": "prepro/Prepro2_Uebung_A.html#task-5",
     "title": "Prepro 2: Exercise A",
     "section": "Task 5",
-    "text": "Task 5\nCreate a new month column (from time). To do this, use the lubridate::month() function.",
+    "text": "Task 5\nCreate a new month column (from time). To do this, use the lubridate::month() function.\n\n\nSample Solution\n\nlibrary(\"lubridate\")\n\n\nweather$month &lt;- month(weather$time)",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prepro 2: Exercise A</span>"
@@ -285,7 +285,7 @@
     "href": "prepro/Prepro2_Uebung_A.html#task-6",
     "title": "Prepro 2: Exercise A",
     "section": "Task 6",
-    "text": "Task 6\nUse the month column to calculate the average temperature per month.",
+    "text": "Task 6\nUse the month column to calculate the average temperature per month.\n\n\nSample Solution\nmean(weather$tre200h0[weather$month == 1])\n## [1] -1.963239\nmean(weather$tre200h0[weather$month == 2])\n## [1] 0.3552632\nmean(weather$tre200h0[weather$month == 3])\n## [1] 2.965054\n\n# etc. for all 12 months",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prepro 2: Exercise A</span>"
@@ -296,7 +296,7 @@
     "href": "prepro/Prepro2_Uebung_B.html",
     "title": "Prepro 2: Exercise B",
     "section": "",
-    "text": "Task 1\nYou have data from three sensors (sensor1.csv, sensor2.csv, sensor3.csv). Read in the data sets using the library readr.",
+    "text": "Task 1\nYou have data from three sensors (sensor1.csv, sensor2.csv, sensor3.csv). Read in the data sets using the library readr.\nSample Solution\n\nlibrary(\"readr\")\n\n\nsensor1 &lt;- read_delim(\"datasets/prepro/sensor1.csv\")\nsensor2 &lt;- read_delim(\"datasets/prepro/sensor2.csv\")\nsensor3 &lt;- read_delim(\"datasets/prepro/sensor3.csv\")",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Prepro 2: Exercise B</span>"
@@ -307,7 +307,7 @@
     "href": "prepro/Prepro2_Uebung_B.html#task-2",
     "title": "Prepro 2: Exercise B",
     "section": "Task 2",
-    "text": "Task 2\nFrom the 3 data frames, create a single data frame that looks like the one shown below. Use two joins from dplyr to connect 3 data.frames. Then tidy up the column names (how can we do that?).\n\n\n\n\n\nDatetime\nSensor1\nSensor2\nSensor3\n\n\n\n\n16102017_1800\n23.5\n13.5\n26.5\n\n\n17102017_1800\n25.4\n24.4\n24.4\n\n\n18102017_1800\n12.4\n22.4\n13.4\n\n\n19102017_1800\n5.4\n12.4\n7.4\n\n\n23102017_1800\n23.5\n13.5\nNA\n\n\n24102017_1800\n21.3\n11.3\nNA",
+    "text": "Task 2\nFrom the 3 data frames, create a single data frame that looks like the one shown below. Use two joins from dplyr to connect 3 data.frames. Then tidy up the column names (how can we do that?).\n\n\nSample Solution\n\nlibrary(\"dplyr\")\n\n\nsensor1_2 &lt;- full_join(sensor1, sensor2, \"Datetime\")\n\nsensor_all &lt;- full_join(sensor1_2, sensor3, by = \"Datetime\")\n\n\n\n\n\n\n\nDatetime\nSensor1\nSensor2\nSensor3\n\n\n\n\n16102017_1800\n23.5\n13.5\n26.5\n\n\n17102017_1800\n25.4\n24.4\n24.4\n\n\n18102017_1800\n12.4\n22.4\n13.4\n\n\n19102017_1800\n5.4\n12.4\n7.4\n\n\n23102017_1800\n23.5\n13.5\nNA\n\n\n24102017_1800\n21.3\n11.3\nNA",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Prepro 2: Exercise B</span>"
@@ -318,7 +318,7 @@
     "href": "prepro/Prepro2_Uebung_B.html#task-3",
     "title": "Prepro 2: Exercise B",
     "section": "Task 3",
-    "text": "Task 3\nImport the sensor_fail.csv file into R.\nsensor_fail.csv has a variable SensorStatus: 1 means the sensor is measuring, 0 means the sensor is not measuring. If sensor status = 0, the Temp = 0 value is incorrect. It should be NA (not available). Correct the dataset accordingly.\n\n\n\n\n\nSensor\nTemp\nHum_%\nDatetime\nSensorStatus\n\n\n\n\nSen102\n0.6\n98\n16102017_1800\n1\n\n\nSen102\n0.3\n96\n17102017_1800\n1\n\n\nSen102\n0.0\n87\n18102017_1800\n1\n\n\nSen102\n0.0\n86\n19102017_1800\n0\n\n\nSen102\n0.0\n98\n23102017_1800\n0\n\n\nSen102\n0.0\n98\n24102017_1800\n0\n\n\nSen102\n0.0\n96\n25102017_1800\n1\n\n\nSen103\n-0.3\n87\n26102017_1800\n1\n\n\nSen103\n-0.7\n98\n27102017_1800\n1\n\n\nSen103\n-1.2\n98\n28102017_1800\n1",
+    "text": "Task 3\nImport the sensor_fail.csv file into R.\n\n\nSample Solution\nsensor_fail &lt;- read_delim(\"datasets/prepro/sensor_fail.csv\")\n\n\nsensor_fail.csv has a variable SensorStatus: 1 means the sensor is measuring, 0 means the sensor is not measuring. If sensor status = 0, the Temp = 0 value is incorrect. It should be NA (not available). Correct the dataset accordingly.\n\n\n\n\n\nSensor\nTemp\nHum_%\nDatetime\nSensorStatus\n\n\n\n\nSen102\n0.6\n98\n16102017_1800\n1\n\n\nSen102\n0.3\n96\n17102017_1800\n1\n\n\nSen102\n0.0\n87\n18102017_1800\n1\n\n\nSen102\n0.0\n86\n19102017_1800\n0\n\n\nSen102\n0.0\n98\n23102017_1800\n0\n\n\nSen102\n0.0\n98\n24102017_1800\n0\n\n\nSen102\n0.0\n96\n25102017_1800\n1\n\n\nSen103\n-0.3\n87\n26102017_1800\n1\n\n\nSen103\n-0.7\n98\n27102017_1800\n1\n\n\nSen103\n-1.2\n98\n28102017_1800\n1\n\n\n\n\n\n\n\nSample Solution\n# with base-R:\nsensor_fail$Temp_correct &lt;- sensor_fail$Temp\nsensor_fail$Temp_correct[sensor_fail$SensorStatus == 0] &lt;- NA\n\n# the same with dplyr:\nsensor_fail &lt;- sensor_fail |&gt;\n  mutate(Temp_correct = ifelse(SensorStatus == 0, NA, Temp))",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Prepro 2: Exercise B</span>"
@@ -329,7 +329,7 @@
     "href": "prepro/Prepro2_Uebung_B.html#task-4",
     "title": "Prepro 2: Exercise B",
     "section": "Task 4",
-    "text": "Task 4\nWhy does it matter if 0 or NA is recorded? Calculate the mean of the temperature / humidity after you have corrected the dataset.",
+    "text": "Task 4\nWhy does it matter if 0 or NA is recorded? Calculate the mean of the temperature / humidity after you have corrected the dataset.\n\n\nSample Solution\n# Mean values of the incorrect sensor data: 0 flows into the calculation\n# and distorts the mean\nmean(sensor_fail$Temp)\n## [1] -0.13\n\n# Mean values of the corrected sensor data: with na.rm = TRUE,\n# NA values are removed from the calculation.\nmean(sensor_fail$Temp_correct, na.rm = TRUE)\n## [1] -0.1857143",
     "crumbs": [
       "Pre-Processing",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Prepro 2: Exercise B</span>"
