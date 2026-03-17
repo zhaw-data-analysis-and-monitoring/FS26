@@ -422,6 +422,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../infovis/Infovis1_Script_eda.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Infovis 1: EDA Script</span></a>
   </div>
 </li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../infovis/Infovis2_Uebung_A.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Infovis 2: Exercise A</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../infovis/Infovis2_Uebung_B.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Infovis 2: Exercise B (Optional)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -564,14 +575,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cantons <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"datasets/rauman/kantone.gpkg"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>municipalities <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"datasets/rauman/gemeinden.gpkg"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Look at the imported records <em>in your terminal</em> (see <a href="#nte-sf-terminal" class="quarto-xref">Note&nbsp;<span>19.1</span></a>).</p>
+<p>Look at the imported records <em>in your terminal</em> (see <a href="#nte-sf-terminal" class="quarto-xref">Note&nbsp;<span>21.1</span></a>).</p>
 <div id="nte-sf-terminal" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;19.1
+Note&nbsp;21.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -646,14 +657,14 @@ Note&nbsp;19.1
 <li><code>CH1903+ LV95</code>: the new coordinate system of Switzerland</li>
 <li><code>WGS84</code>: a frequently used, global geodetic coordinate system, i.e., the coordinates are given in length and width (lat/lon).</li>
 </ul>
-<p>It is important to determine the correct coordinate system on the basis of the coordinates shown in the <code>geometry</code> column. If you select a location by right clicking on <a href="https://map.geo.admin.ch">map.geo.admin.ch</a>, you can find the coordinates of this location in various coordinate reference systems (see <a href="#fig-map-geo-admin" class="quarto-xref">Figure&nbsp;<span>19.1</span></a>).</p>
+<p>It is important to determine the correct coordinate system on the basis of the coordinates shown in the <code>geometry</code> column. If you select a location by right clicking on <a href="https://map.geo.admin.ch">map.geo.admin.ch</a>, you can find the coordinates of this location in various coordinate reference systems (see <a href="#fig-map-geo-admin" class="quarto-xref">Figure&nbsp;<span>21.1</span></a>).</p>
 <div id="fig-map-geo-admin" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-map-geo-admin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/map.geo.admin.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-geo-admin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19.1: The sampe location in different coordinate systems, displayed on the website <a href="https://map.geo.admin.ch">map.geo.admin.ch</a>
+Figure&nbsp;21.1: The sampe location in different coordinate systems, displayed on the website <a href="https://map.geo.admin.ch">map.geo.admin.ch</a>
 </figcaption>
 </figure>
 </div>
@@ -882,7 +893,7 @@ Figure&nbsp;19.1: The sampe location in different coordinate systems, displayed 
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-ex4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19.2: Comparing these depictions clearly shows the problems of MAUP
+Figure&nbsp;21.2: Comparing these depictions clearly shows the problems of MAUP
 </figcaption>
 </figure>
 </div>
