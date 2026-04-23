@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Analysis and Monitoring",
     "section": "",
-    "text": "Welcome\nThe “Data Analysis and Monitoring” module provides an in-depth overview of the methodological skills required for hands-on research and development in any applied data-related or data-heavy project the Master’s level. Students will refine their methodological expertise by examining the different typical phases of data analysis and modelling, starting from data capture and preprocessing the data, through exploratory analysis and predictive modelling, to visualization and communication in the end. They will also acquire the methodological foundations that will underpin the subsequent modules in the MSc CEM programme. The module provides both general methodological skills that cut across disciplines (e.g., scientific theory, computer-aided data processing, and statistics) and specialised knowledge in the context of circular economy.\nThe materials required for the R exercises are available here, with demo files, exercises and solutions.\nThis website was last updated on 2026-03-24 18:36:37.13406.",
+    "text": "Welcome\nThe “Data Analysis and Monitoring” module provides an in-depth overview of the methodological skills required for hands-on research and development in any applied data-related or data-heavy project the Master’s level. Students will refine their methodological expertise by examining the different typical phases of data analysis and modelling, starting from data capture and preprocessing the data, through exploratory analysis and predictive modelling, to visualization and communication in the end. They will also acquire the methodological foundations that will underpin the subsequent modules in the MSc CEM programme. The module provides both general methodological skills that cut across disciplines (e.g., scientific theory, computer-aided data processing, and statistics) and specialised knowledge in the context of circular economy.\nThe materials required for the R exercises are available here, with demo files, exercises and solutions.\nThis website was last updated on 2026-04-23 14:11:09.890379.",
     "crumbs": [
       "Welcome"
     ]
@@ -833,7 +833,7 @@
     "href": "Statistic.html",
     "title": "Statistic",
     "section": "",
-    "text": "Write Intro\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\nLesson\n\n\n\nTopic\n\n\n\n\n\n\n\n\nPreparation\n\n\n2025-04-01\n\n\nstat1\n\n\nPreparation\n\n\n\n\n\n\nStatistics 1: The Basics of Statistics\n\n\n2025-04-01\n\n\nstat1\n\n\nStatistic 1\n\n\n\n\n\n\nStatistics 2: Advanced Topics: Inductive and Multivariate Statistics\n\n\n2025-04-08\n\n\nstat2\n\n\nStatistic 2\n\n\n\n\n\n\nStatistics 3: Cluster analysis and data classification approaches\n\n\n2025-04-15\n\n\nstat3\n\n\nStatistic 3\n\n\n\n\n\n\nNo matching items",
+    "text": "Write Intro\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\nLesson\n\n\n\nTopic\n\n\n\n\n\n\n\n\nPreparation\n\n\n2026-03-31\n\n\nstat1\n\n\nPreparation\n\n\n\n\n\n\nStatistics 1: The Basics of Statistics\n\n\n2026-03-31\n\n\nstat1\n\n\nStatistic 1\n\n\n\n\n\n\nStatistics 2: Advanced Topics: Inductive and Multivariate Statistics\n\n\n2026-04-07\n\n\nstat2\n\n\nStatistic 2\n\n\n\n\n\n\nStatistics 3: Cluster analysis and data classification approaches\n\n\n2026-04-14\n\n\nstat3\n\n\nStatistic 3\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Statistic"
     ]
